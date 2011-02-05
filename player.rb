@@ -8,10 +8,10 @@ class Player
     @map = window.map
     # Load all animation frames
     #@standing, @walk1, @walk2, @jump =
-    #  *Image.load_tiles(window, "media/CptnRuby.png", 50, 50, false)
+     #*Image.load_tiles(window, "media/CaptRuby.png", 50, 50, false)
     # This always points to the frame that is currently drawn.
     # This is set in update, and used in draw.
-    @image = Image.new(window, "images/player.png", false)
+    @image = Image.new(window, "images/ninjastick2.png", false)
   end
   
   def draw

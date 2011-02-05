@@ -20,7 +20,7 @@ class Platformer < Gosu::Window
   def initialize
     super(640, 480, false)
     self.caption = "Platformer"
-    @sky = Image.new(self, "images/sky.png", true)
+    @sky = Image.new(self, "images/ninja_skull2.png", true)
     @map = Map.new(self, "map.txt")
     @player = Player.new(self, 400, 100)
     # The scrolling position is stored as top left corner of the screen.
