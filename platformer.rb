@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'rubygems'
-require 'chingu'
+require 'game'
 
 class Platformer < Gosu::Window
   
@@ -8,8 +8,10 @@ class Platformer < Gosu::Window
     super(1024, 768, false)
   end
   
-  def setup
-    switch_game_state(Game)
+  def draw
+  end
+  
+  def update
   end
   
 end
