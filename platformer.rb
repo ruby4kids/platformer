@@ -3,8 +3,8 @@ $LOAD_PATH.unshift File.dirname(__FILE__)
 require 'rubygems'
 require 'gosu'
 require 'hunter'
+require 'power_up'
 include Gosu
-
 require 'player'
 require 'map'
 
@@ -29,6 +29,7 @@ class Platformer < Gosu::Window
     @start_time = Time.now
     @font = Gosu::Font.new(self, Gosu::default_font_name, 60)
     @score = 0
+    @power_up = PowerUp.new(self)
   end
   
   def update
@@ -50,6 +51,7 @@ class Platformer < Gosu::Window
 
   
   def draw
+    @power_up.draw
     @font.draw("The score is: #{@score}", 20,20,5)
     @sky.draw 0, 0, 0
     translate(-@camera_x, -@camera_y) do

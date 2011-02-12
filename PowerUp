@@ -1,0 +1,7 @@
+class PowerUp
+def initialize
+@icon = Gosu::Image::Image.new(@game_window, "Images/nukeimage.png", true)
+end
+def draw
+@icon = rand(@game_window.height)
+end
