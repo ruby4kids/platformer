@@ -32,7 +32,7 @@ class Platformer < Gosu::Window
   end
   
   def update
-    @score = @score + 10000
+    @score = @score + 1
     if Time.now > (@start_time+3)
       @start_time = Time.now
       @hunters << Hunter.new(self, @player)
