@@ -33,6 +33,10 @@ class Player
       not @map.solid?(@x + offs_x, @y + offs_y - 45)
   end
   
+  def touch?(hunters)
+    hunters.any? {|h| Gosu::distance(@x, @y, h.x, h.y) < 10}
+  end
+  
   def update(move_x)
     # Select image depending on action
     if (move_x == 0)

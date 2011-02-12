@@ -15,8 +15,6 @@ class Map
           Tiles::Grass
         when '#'
           Tiles::Earth
-        else
-          nil
         end
       end
     end
@@ -36,6 +34,7 @@ class Map
       end
     end
   end
+
   
   # Solid at a given pixel position?
   def solid?(x, y)
