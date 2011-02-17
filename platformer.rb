@@ -14,7 +14,7 @@ module Tiles
 end
 
 class Platformer < Gosu::Window
-  
+
   attr_reader :map
 
   def initialize
@@ -31,7 +31,7 @@ class Platformer < Gosu::Window
     @score = 0
     @power_up = PowerUp.new(self)
   end
-  
+
   def update
     @score = @score + 1
     if Time.now > (@start_time+3)
@@ -43,13 +43,13 @@ class Platformer < Gosu::Window
     move_x += 5 if button_down? KbRight
     @player.update(move_x) unless @player.touch?(@hunters)
     @hunters.each {|hunter| hunter.chase}
-        # Scrolling follows player
+    # Scrolling follows player
     @camera_x = [[@player.x - 320, 0].max, @map.width * 50 - 640].min
     @camera_y = [[@player.y - 240, 0].max, @map.height * 50 - 480].min
   end
-  
 
-  
+
+
   def draw
     @power_up.draw
     @font.draw("The score is: #{@score}", 20,20,5)
@@ -60,12 +60,12 @@ class Platformer < Gosu::Window
       @hunters.each {|hunter| hunter.draw}
     end
   end
-  
+
   def button_down(id)
     if id == KbUp then @player.try_to_jump end
     if id == KbEscape then close end
   end
-  
+
 end
 
 game = Platformer.new
